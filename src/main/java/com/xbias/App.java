@@ -1,6 +1,6 @@
+package com.xbias;
 import java.util.Scanner;
-import java.net.*;
-import org.jsoup.*;
+
 class Main {
   public static void main(String[] args) throws Exception
   {

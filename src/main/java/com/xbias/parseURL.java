@@ -1,7 +1,7 @@
+package com.xbias;
 import org.jsoup.*;
 import org.jsoup.nodes.Element;
 import org.jsoup.nodes.*;
-import java.net.*;
 import java.io.*;
 import java.util.ArrayList;
 import org.jsoup.select.Elements;
@@ -35,38 +35,50 @@ class parseURL
     {
       ArrayList<String> FoxResult = result;
       Scraper s = new Scraper();
-      s.scraper(FoxResult.get(0));
+      s.scraper(FoxResult.get(0), "wrapper");
       return FoxResult.get(0);
     }
   }
   if (type.equals("cnn"))
     {
       ArrayList<String> CnnResult = result;
+      Scraper s = new Scraper();
+      s.scraper(CnnResult.get(0), "body-text");
       return CnnResult.get(0);
     }
     if (type.equals("ap"))
     {
       ArrayList<String> apResult = result;
+      Scraper s = new Scraper();
+      s.scraper(apResult.get(0), "root");
       return apResult.get(0);
     }
     if (type.equals("Reuters"))
     {
       ArrayList<String> ReutersResult = result;
+      Scraper s = new Scraper();
+      s.scraper(ReutersResult.get(0), "paragraph");
       return ReutersResult.get(0);
     }
     if (type.equals("npr"))
     {
       ArrayList<String> NprResult = result;
+      Scraper s = new Scraper();
+      s.scraper(NprResult.get(0), "storytext");
       return NprResult.get(0);
     }
     if (type.equals("nyt"))
     {
       ArrayList<String> NytResult = result;
+      Scraper s = new Scraper();
+      s.scraper(NytResult.get(0), "site-content");
       return NytResult.get(0);
     }
     if (type.equals("et"))
     {
       ArrayList<String> EtResult = result;
+      Scraper s = new Scraper();
+      s.scraper(EtResult.get(0), "main");
       return EtResult.get(0);
     }
     else
