@@ -25,13 +25,10 @@ class Scraper
 			Elements tds = row.getAllElements();
 			for (int i = 0; i < tds.size(); i++) 
       { 
-        parsedFile += (rows.get(i).text());
+        parsedFile += (tds.get(i).text());
 			}
     }
     //System.out.println("Parsed File: " + parsedFile); //DEBUG: Prints parsed file
-    // creates the file
-    File parsed_file = new File("parsedFile.txt");
-    parsed_file.createNewFile();
     return parsedFile;
   }
 }
