@@ -18,17 +18,20 @@ class Scraper
 //Downloads the webpage so we're not hitting the page with a bunch of traffic (cuz that's mean)
     Document doc = DownloadWebPage(html);
 //Converts the file to a string so we can parse it through compareBias	
-		Element table = doc.getElementById(id);
-		Elements rows = table.getAllElements(); //temporary solution, going to have to get smarter with tags, currently collects ALL elements on a page 
-    String parsedFile = "";
+		Element table = doc.getElementById(id);  //going to have to change this Id site to site, not everybody calls their id for the main body of the page wrapper....
+		Elements rows = table.getAllElements();
+    String parsedFile = "null";
 		for (Element row : rows) {
 			Elements tds = row.getAllElements();
 			for (int i = 0; i < tds.size(); i++) 
       { 
-        parsedFile = (rows.get(i).text());
+        parsedFile += (rows.get(i).text());
 			}
     }
     //System.out.println("Parsed File: " + parsedFile); //DEBUG: Prints parsed file
+    // creates the file
+    File parsed_file = new File("parsedFile.txt");
+    parsed_file.createNewFile();
     return parsedFile;
   }
 }

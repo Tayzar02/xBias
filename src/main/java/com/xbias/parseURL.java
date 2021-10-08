@@ -35,7 +35,8 @@ class parseURL
     {
       ArrayList<String> FoxResult = result;
       Scraper s = new Scraper();
-      s.scraper(FoxResult.get(0), "wrapper");
+      compareBias b = new compareBias();
+      b.input(s.scraper(FoxResult.get(0), "wrapper"), "FoxText.txt");
       return FoxResult.get(0);
     }
   }
@@ -43,42 +44,48 @@ class parseURL
     {
       ArrayList<String> CnnResult = result;
       Scraper s = new Scraper();
-      s.scraper(CnnResult.get(0), "body-text");
+      compareBias b = new compareBias();
+      b.input(s.scraper(CnnResult.get(0), "body-text"), "CnnText.txt");
       return CnnResult.get(0);
     }
     if (type.equals("ap"))
     {
       ArrayList<String> apResult = result;
       Scraper s = new Scraper();
-      s.scraper(apResult.get(0), "root");
+      compareBias b = new compareBias();
+      b.input(s.scraper(apResult.get(0), "root"), "apText.txt");
       return apResult.get(0);
     }
     if (type.equals("Reuters"))
     {
       ArrayList<String> ReutersResult = result;
       Scraper s = new Scraper();
-      s.scraper(ReutersResult.get(0), "paragraph");
+      compareBias b = new compareBias();
+      b.input(s.scraper(ReutersResult.get(0), "paragraph"), "ReutersText.txt");
       return ReutersResult.get(0);
     }
     if (type.equals("npr"))
     {
       ArrayList<String> NprResult = result;
       Scraper s = new Scraper();
-      s.scraper(NprResult.get(0), "storytext");
+      compareBias b = new compareBias();
+      b.input(s.scraper(NprResult.get(0), "storytext"), "NprText.txt");
       return NprResult.get(0);
     }
     if (type.equals("nyt"))
     {
       ArrayList<String> NytResult = result;
       Scraper s = new Scraper();
-      s.scraper(NytResult.get(0), "site-content");
+      compareBias b = new compareBias();
+      b.input(s.scraper(NytResult.get(0), "site-content"), "NytText.txt");
       return NytResult.get(0);
     }
     if (type.equals("et"))
     {
       ArrayList<String> EtResult = result;
       Scraper s = new Scraper();
-      s.scraper(EtResult.get(0), "main");
+      compareBias b = new compareBias();
+      b.input(s.scraper(EtResult.get(0), "main"), "EtText.txt");
       return EtResult.get(0);
     }
     else
