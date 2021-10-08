@@ -10,7 +10,7 @@ class compareBias {
     */
     public void input(String parsedFile, String FileName) throws Exception
     {          
-        FileWriter fw = new FileWriter(parsedFile, false);
+        FileWriter fw = new FileWriter(FileName, false);
         BufferedWriter bw = new BufferedWriter(fw);
         bw.write(parsedFile);
         bw.newLine();
